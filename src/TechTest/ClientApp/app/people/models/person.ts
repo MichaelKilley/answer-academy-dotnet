@@ -37,6 +37,16 @@ export class Person implements IPerson {
     //
     // Example: 'Bo Bob' is a palindrome.
 
-    return false;
+      var lowerfullname: string = this.fullName.toLowerCase() 
+      lowerfullname = lowerfullname.replace(" ","")
+      var tempword: string = lowerfullname.split('').reverse().join('')
+
+      if (lowerfullname == tempword) {
+          return true;
+      } else {
+          return false;
+      }
+
+    
   }
 }

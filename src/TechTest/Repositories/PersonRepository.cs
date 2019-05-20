@@ -58,7 +58,8 @@ namespace TechTest.Repositories
                 new Person { Id = 8, FirstName = "Lilly", LastName = "Hale", Authorised = false, Enabled = false, Colours = new List<Colour> { new Colour { Id = 1, Name = "Red" }, new Colour { Id = 2, Name = "Green" } , new Colour { Id = 3, Name = "Blue" } } },
                 new Person { Id = 9, FirstName = "Patrick", LastName = "Kerr", Authorised = true, Enabled = true, Colours = new List<Colour> { new Colour { Id = 2, Name = "Green" } } },
                 new Person { Id = 10, FirstName = "Sharon", LastName = "Halt", Authorised = false, Enabled = false, Colours = new List<Colour> { new Colour { Id = 1, Name = "Red" }, new Colour { Id = 2, Name = "Green" } , new Colour { Id = 3, Name = "Blue" } } },
-                new Person { Id = 11, FirstName = "Willis", LastName = "Tibbs", Authorised = true, Enabled = false, Colours = new List<Colour> { new Colour { Id = 1, Name = "Red" }, new Colour { Id = 2, Name = "Green" } , new Colour { Id = 3, Name = "Blue" } } },
+                new Person { Id = 11, FirstName = "Willis", LastName = "Tibbs", Authorised = true, Enabled = false, Colours = new List<Colour> { new Colour { Id = 1, Name = "Red" }, new Colour { Id = 2, Name = "Green" } , new Colour { Id = 3, Name = "Blue" } } }
+
             };
     }
 }

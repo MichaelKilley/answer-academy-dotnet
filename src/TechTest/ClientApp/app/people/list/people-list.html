@@ -1,33 +1,54 @@
 <template>
-  
-  <h2 class="title">${heading}</h2>
-  <table class="table is-striped is-fullwidth">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Palindrome</th>
-        <th>Authorised</th>
-        <th>Enabled</th>
-        <th>Colours</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      <!--
-        TODO: Step 6
-        Add styles to Palindrome, Authorised and Enabled values.
-        When the value is Yes the text colour should be Green.
-        When the value is No the text colour should be Red.
-      -->
 
-      <tr repeat.for="person of people" person.bind="person">
-        <td><a class="is-link" href="/people/${person.id}">${person.fullName}</a></td>
-        <td>${person.palindrome ? 'Yes' : 'No'}</td>
-        <td>${person.authorised ? 'Yes' : 'No'}</td>
-        <td>${person.enabled ? 'Yes' : 'No'}</td>
-        <td>${person.colours | colourNames }</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2 class="title">${heading}</h2>
+    <!--<style>
+        #green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>-->
+    <table class="table is-striped is-fullwidth">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Palindrome</th>
+                <th>Authorised</th>
+                <th>Enabled</th>
+                <th>Colours</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!--
+              TODO: Step 6
+              Add styles to Palindrome, Authorised and Enabled values.
+              When the value is Yes the text colour should be Green.
+              When the value is No the text colour should be Red.
+            -->
+
+
+            <tr repeat.for="person of people" person.bind="person">
+                <td><a class="is-link" href="/people/${person.id}">${person.fullName}</a></td>
+                <td>${person.palindrome ? 'Yes' : 'No'}</td>
+                <td>${person.authorised ? 'Yes' : 'No'}</td>
+                <td>${person.enabled ? 'Yes' : 'No'}</td>
+                <td>${person.colours | colourNames }</td>
+
+                <!--<td>${person.palindrome}</td> returns true or false
+                <td [ng-switch]=${person.palindrome}>
+                    <span ng-switch-when=true><font color="green">Yes</font></span>
+                    <span ng-switch-when='true'><font color="red">Yes</font></span>
+                    <span ng-switch-when="true"><font color="red">Yes1</font></span>
+                    <span ng-switch-default><font color="red">No</font></span>
+                </td>-->
+
+
+
+            </tr>
+        </tbody>
+    </table>
 
 </template>
