@@ -38,41 +38,7 @@ namespace TechTest.Controllers
 
 
 
-            #region serlize
-
-            //    return Content(JsonConvert.SerializeObject(persons));
-            // return Content(JsonConvert.SerializeObject(persons), "application/json");
-            // return Content(JsonConvert.SerializeObject(persons), "application/json,Encoding.UTF8");
-            // various attempts
-            // return Content(persons.ToString(), "application/json");
-            //  return Content(JsonConvert.SerializeObject(persons));
-
-            // var obj = JArray.Parse(persons.ToString());
-
-            //var contributors = JsonConvert.DeserializeObject<Person>(persons.ToString());
-            //return contributors.
-
-            //var contentCorrected = persons.ToString().Replace(@"`", "");
-            //var contributors = JsonConvert.DeserializeObject<Person>(persons.ToString());
-
-
-            //var persons = this.PersonRepository.GetAll();
-            //            JObject results = JObject.Parse(persons.ToString());
-            //            return Content(JsonConvert.SerializeObject(results), "application/json");
-
-            //  return Content(JsonConvert.DeserializeObject<Person>(persons));
-
-            //var persons = this.PersonRepository.GetAll();
-
-            //var jsonResult = JsonConvert.DeserializeObject<dynamic>(persons);
-
-            //JsonSerializerSettings jsSettings = new JsonSerializerSettings();
-            //jsSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            //var persons = this.PersonRepository.GetAll();
-            //var converted = JsonConvert.SerializeObject(persons, null, jsSettings);
-            //return Content(converted, "application/json");
-
-            #endregion
+           
 
         }
 
