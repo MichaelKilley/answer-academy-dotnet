@@ -45,8 +45,6 @@ export class Person implements IPerson {
           return true;
       } else {
           return false;
-      }
-
-    
+      }    
   }
 }

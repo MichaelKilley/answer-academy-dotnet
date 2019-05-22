@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "63bf4533ea5f37cf9df4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dd7e6ce899c8fbaf1a36"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -21149,7 +21149,27 @@ let PersonEdit = class PersonEdit {
         // Send a JSON request to the API with the newly updated
         // this.person object. If the response is successful then
         // the user should be navigated to the list page.
-        throw new Error('Not Implemented');
+        //throw new Error('Not Implemented');
+        //URL from launchSettings and URL example
+        // "applicationUrl": "http://localhost:50182/"  from launchSettings
+        //var url = 'http://localhost:50182/api/people/1';      
+        var UpdatePerson = this.person;
+        var url = 'http://localhost:50182/api/people/' + UpdatePerson.id;
+        var data = {
+            "authorised": UpdatePerson.authorised,
+            "enabled": UpdatePerson.enabled,
+            "colours": UpdatePerson.colours
+        };
+        fetch(url, {
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json())
+            //.then(response => console.log('Success:', JSON.stringify(response)))          
+            .then(reponse => this.router.navigate('people'))
+            .catch(error => console.error('Error:', error));
     }
     cancel() {
         this.router.navigate('people');
@@ -21220,7 +21240,7 @@ PeopleList = __decorate([
 /***/ "app/people/list/people-list.html":
 /***/ (function(module, exports) {
 
-module.exports = "<template>\r\n\r\n    <h2 class=\"title\">${heading}</h2>\r\n    <!--<style>\r\n        #green {\r\n            color: green;\r\n        }\r\n\r\n        .red {\r\n            color: red;\r\n        }\r\n    </style>-->\r\n    <table class=\"table is-striped is-fullwidth\">\r\n        <thead>\r\n            <tr>\r\n                <th>Name</th>\r\n                <th>Palindrome</th>\r\n                <th>Authorised</th>\r\n                <th>Enabled</th>\r\n                <th>Colours</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n\r\n            <!--\r\n              TODO: Step 6\r\n              Add styles to Palindrome, Authorised and Enabled values.\r\n              When the value is Yes the text colour should be Green.\r\n              When the value is No the text colour should be Red.\r\n            -->\r\n\r\n\r\n            <tr repeat.for=\"person of people\" person.bind=\"person\">\r\n                <td><a class=\"is-link\" href=\"/people/${person.id}\">${person.fullName}</a></td>\r\n                <td>${person.palindrome ? 'Yes' : 'No'}</td>\r\n                <td>${person.authorised ? 'Yes' : 'No'}</td>\r\n                <td>${person.enabled ? 'Yes' : 'No'}</td>\r\n                <td>${person.colours | colourNames }</td>\r\n\r\n                <!--<td>${person.palindrome}</td> returns true or false\r\n                <td [ng-switch]=${person.palindrome}>\r\n                    <span ng-switch-when=true><font color=\"green\">Yes</font></span>\r\n                    <span ng-switch-when='true'><font color=\"red\">Yes</font></span>\r\n                    <span ng-switch-when=\"true\"><font color=\"red\">Yes1</font></span>\r\n                    <span ng-switch-default><font color=\"red\">No</font></span>\r\n                </td>-->\r\n\r\n\r\n\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n\r\n</template>\r\n";
+module.exports = "<template>\r\n\r\n    <h2 class=\"title\">${heading}</h2>\r\n    <table class=\"table is-striped is-fullwidth\">\r\n        <thead>\r\n            <tr>\r\n                <th>Name</th>\r\n                <th>Palindrome</th>\r\n                <th>Authorised</th>\r\n                <th>Enabled</th>\r\n                <th>Colours</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n\r\n            <!--\r\n              TODO: Step 6\r\n              Add styles to Palindrome, Authorised and Enabled values.\r\n              When the value is Yes the text colour should be Green.\r\n              When the value is No the text colour should be Red.\r\n            -->\r\n\r\n            <tr repeat.for=\"person of people\" person.bind=\"person\">\r\n                <td><a class=\"is-link\" href=\"/people/${person.id}\">${person.fullName}</a></td>\r\n\r\n                <!--<td>${person.palindrome ? 'Yes' : 'No'}</td>-->\r\n               \r\n                <td class=\"${person.palindrome ? 'yes-palindrome' : 'no-palindrome'}\">${person.palindrome ? 'Yes' : 'No'}</td>\r\n                <td class=\"${person.authorised ? 'yes-authorised' : 'no-authorised'}\">${person.authorised ? 'Yes' : 'No'}</td>\r\n                <td class=\"${person.enabled ? 'yes-enabled' : 'no-enabled'}\">${person.enabled ? 'Yes' : 'No'}</td>\r\n                \r\n                <td>${person.colours | colourNames }</td>\r\n\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n\r\n</template>\r\n";
 
 /***/ }),
 

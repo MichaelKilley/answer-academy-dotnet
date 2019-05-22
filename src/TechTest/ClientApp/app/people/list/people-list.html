@@ -1,15 +1,6 @@
 <template>
 
     <h2 class="title">${heading}</h2>
-    <!--<style>
-        #green {
-            color: green;
-        }
-
-        .red {
-            color: red;
-        }
-    </style>-->
     <table class="table is-striped is-fullwidth">
         <thead>
             <tr>
@@ -29,23 +20,16 @@
               When the value is No the text colour should be Red.
             -->
 
-
             <tr repeat.for="person of people" person.bind="person">
                 <td><a class="is-link" href="/people/${person.id}">${person.fullName}</a></td>
-                <td>${person.palindrome ? 'Yes' : 'No'}</td>
-                <td>${person.authorised ? 'Yes' : 'No'}</td>
-                <td>${person.enabled ? 'Yes' : 'No'}</td>
+
+                <!--<td>${person.palindrome ? 'Yes' : 'No'}</td>-->
+               
+                <td class="${person.palindrome ? 'yes-palindrome' : 'no-palindrome'}">${person.palindrome ? 'Yes' : 'No'}</td>
+                <td class="${person.authorised ? 'yes-authorised' : 'no-authorised'}">${person.authorised ? 'Yes' : 'No'}</td>
+                <td class="${person.enabled ? 'yes-enabled' : 'no-enabled'}">${person.enabled ? 'Yes' : 'No'}</td>
+                
                 <td>${person.colours | colourNames }</td>
-
-                <!--<td>${person.palindrome}</td> returns true or false
-                <td [ng-switch]=${person.palindrome}>
-                    <span ng-switch-when=true><font color="green">Yes</font></span>
-                    <span ng-switch-when='true'><font color="red">Yes</font></span>
-                    <span ng-switch-when="true"><font color="red">Yes1</font></span>
-                    <span ng-switch-default><font color="red">No</font></span>
-                </td>-->
-
-
 
             </tr>
         </tbody>

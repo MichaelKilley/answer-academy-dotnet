@@ -12,6 +12,7 @@ export class ColourNamesValueConverter {
     // alphabetically and there should not be a trailing comma.
     //
     // Example: 'Blue, Green, Red'
+
       colours.sort(function (a, b) {
           if (a.name < b.name) { return -1; }
           if (a.name > b.name) { return 1 }

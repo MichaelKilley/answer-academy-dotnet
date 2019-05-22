@@ -290,6 +290,31 @@ table th {
   font-size: 0.75rem !important;
 }
 
+
+.yes-palindrome {
+    color: green;
+}
+
+.no-palindrome {
+    color: red;
+}
+
+.yes-authorised {
+    color: green;
+}
+
+.no-authorised {
+    color: red;
+}
+
+.yes-enabled {
+    color: green;
+}
+
+.no-enabled {
+    color: red;
+}
+
 @media screen and (max-width: 768px) {
   .is-size-1-mobile {
     font-size: 3rem !important;

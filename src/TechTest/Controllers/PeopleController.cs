@@ -20,8 +20,7 @@ namespace TechTest.Controllers
         private IPersonRepository PersonRepository { get; }
 
         [HttpGet]
-        public IActionResult GetAll()
-        // public JsonResult GetAll()
+        public IActionResult GetAll()        
         {
             // TODO: Step 1
             //
@@ -31,17 +30,11 @@ namespace TechTest.Controllers
             // JSON array should be returned.
 
             // throw new NotImplementedException();
-
             // this Passes Test GetAll_Returns_OK  
 
             return this.Ok(PersonRepository.GetAll());
-
-
-
-           
-
+            
         }
-
 
 
         [HttpGet("{id}")]
@@ -55,8 +48,7 @@ namespace TechTest.Controllers
             // the supplied id then a NotFound should be returned.
 
             //throw new NotImplementedException();
-
-            //var persons = this.PersonRepository.Get(1);
+                        
             var persons = this.PersonRepository.Get(id);
 
             if (persons == null)
@@ -80,6 +72,7 @@ namespace TechTest.Controllers
             // NotFound should be returned.
 
             //  throw new NotImplementedException();
+
             var person = PersonRepository.Get(id);
 
             if (person == null)
@@ -103,7 +96,6 @@ namespace TechTest.Controllers
 
                 return NotFound();
             }
-
 
         }
     }
